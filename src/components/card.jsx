@@ -1,13 +1,13 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import myImage from './azhar.jpg';
 import Ali from './ali.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { useNavigate } from 'react-router-dom'; 
-
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileCard = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const handleAssignmentsButtonClick = () => {
     navigate('/assignment-azhar');
   };
@@ -39,11 +39,26 @@ const ProfileCard = () => {
     border: '1px solid pink', // Add a black border
   };
 
+  const cardHoverVariants = {
+    hover: {
+      scale: 1.05, // Increase the size on hover
+      transition: {
+        duration: 0.3,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
   return (
     <div className="flex space-x-20">
       {/* Profile Card 1 */}
       <div className="flex-1 max-w-lg px-50 p-5">
-        <div className="card bg-base-100 shadow-xl" style={cardStyle}>
+        <motion.div
+          className="card bg-base-100 shadow-xl"
+          style={cardStyle}
+          variants={cardHoverVariants}
+          whileHover="hover" // Apply the hover animation on hover
+        >
           <div className="card-body flex items-center">
             <figure className="w-24 h-24">
               <img
@@ -74,19 +89,27 @@ const ProfileCard = () => {
                   <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
                   LinkedIn
                 </a>
-                <button onClick={handleAssignmentsButtonClick} type="button" class=" mt-2 text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Assignments</button>
-
-
-
+                <button
+                  onClick={handleAssignmentsButtonClick}
+                  type="button"
+                  className=" mt-2 text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                >
+                  Assignments
+                </button>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Profile Card 2 */}
       <div className="flex-1 max-w-lg p-5">
-        <div className="card bg-base-100 shadow-xl" style={cardStyle}>
+        <motion.div
+          className="card bg-base-100 shadow-xl"
+          style={cardStyle}
+          variants={cardHoverVariants}
+          whileHover="hover" // Apply the hover animation on hover
+        >
           <div className="card-body flex items-center">
             <figure className="w-24 h-24">
               <img
@@ -117,12 +140,17 @@ const ProfileCard = () => {
                   <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
                   LinkedIn
                 </a>
-                <button onClick={handleAssignmentsButtonClick1} type="button" class=" mt-2 text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Assignments</button>
-
+                <button
+                  onClick={handleAssignmentsButtonClick1}
+                  type="button"
+                  className=" mt-2 text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                >
+                  Assignments
+                </button>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
