@@ -3,6 +3,7 @@ import Title from './title';
 import Footer from './footer';
 import AssignmentCard from './assignmentcards/azhar';
 import HTML from './assignmentdata/html.png';
+import CustomAvatarImage from './ali.jpg'; // Change the image path accordingly
 
 const alitask = () => {
   return (
@@ -13,6 +14,15 @@ const alitask = () => {
         <span className="text-violet-500 mx-2">Assignments</span>
       </div>
       <div className="flex flex-wrap justify-center">
+        {/* Custom Avatar in the top right corner */}
+        <div className="w-12 h-12 rounded-full overflow-hidden">
+          <img
+            src={CustomAvatarImage}
+            alt="Custom Avatar"
+            className="w-full h-full object-cover"
+            title="Hover over me for a tooltip!"
+          />
+        </div>
         <AssignmentCard
           title="Assignment 1"
           description="Make a HTML file in which use all the HTML 5 tags."

@@ -3,10 +3,22 @@ import Title from './title';
 import Footer from './footer';
 import AssignmentCard from './assignmentcards/azhar';
 import HTML from './assignmentdata/html.png';
+import CustomAvatarImage from './azhar.jpg';
+
 
 const azhartasks = () => {
   return (
     <div>
+     <div className="absolute top-0 right-0 m-4 space-y-4">
+        <div className="w-12 h-12 rounded-full overflow-hidden">
+          <img
+            src={CustomAvatarImage}
+            alt="Custom Avatar"
+            className="w-full h-full object-cover"
+            title="Azhar Hayat Khan"
+          />
+        </div>
+      </div>
       <Title />
       <div className="font-bold">
         <span className="text-pink-500 mx-2">Weekly</span>
