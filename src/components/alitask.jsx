@@ -35,7 +35,7 @@ const alitask = () => {
           title="Assignment 2"
           description="Make a form using the bootstrap css library with all possible input fields."
           imageSrc="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
-          submissionLink="https://alihassan521.github.io/assignment2/"
+          submissionLink="https://alihassan521.github.io/assignment/"
           professorName="Dr Mubashir Khatana"
           submissionDate="2023-09-28"
         />
